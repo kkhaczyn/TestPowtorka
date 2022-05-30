@@ -1,0 +1,27 @@
+﻿@model Ksiazka
+@{
+    Layout = "_Layout";
+}
+
+<table class="descriptionTest">
+    <thead>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>NumberOfPages</th>
+    </thead>
+    <tbody>
+        @foreach (Ksiazka ksiazka in ViewBag.Ksiazki)
+        {
+            <tr>
+                <td>@ksiazka.Id</td>
+                <td>@ksiazka.Title</td>
+                <td>@ksiazka.Description</td>
+                <td>@ksiazka.NumberOfPages</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Authors", "Home")">Cofnij do autorów</a>
+            

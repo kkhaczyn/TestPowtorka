@@ -1,0 +1,23 @@
+﻿@model Autor
+@{ 
+    Layout = "_Layout";
+}
+
+<table class="descriptionTest">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>        
+    </thead>
+    <tbody>
+        @foreach (Autor autor in ViewBag.Autorzy)
+        {
+            <tr>
+                <td>@autor.Id</td>
+                <td>@autor.Name</td>
+                <td>@autor.Surname</td>
+                <td><a href="@Url.Action("Books", "Home", new { id = autor.Id })">Książki</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
